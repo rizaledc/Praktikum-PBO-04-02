@@ -22,10 +22,8 @@ Proyek ini merupakan implementasi konsep Object-Oriented Programming (OOP) dalam
    - [DiagnosisCounter.java](#5-diagnosiscounterjava)
    - [Main.java](#6-mainjava)
 4. [Hubungan Antar Class](#hubungan-antar-class)
-5. [Package yang Digunakan](#package-yang-digunakan)
-6. [Cara Menjalankan Aplikasi](#cara-menjalankan-aplikasi)
-7. [Perbaikan di Masa Depan](#perbaikan-di-masa-depan)
-8. [License](#license)
+5. [Output](#output)
+6. [Kesimpulan](#kesimpulan)
 
 ---
 
@@ -544,3 +542,222 @@ Saat diagnosis diatur di kelas Patient, secara otomatis jumlah penggunaan diagno
 
 -DataChecker:
 Kelas ini berperan sebagai validator dan pengaman, digunakan oleh Patient untuk memastikan diagnosis valid dan hanya dapat diakses jika kunci yang benar digunakan.
+
+## Output
+
+```
+run:
+How many doctors do you want to add? 3
+
+Enter details for Doctor #1
+Name: Patrick Kluivert
+Specialization: COVID
+Doctor ID: PKT101
+
+Enter details for Doctor #2
+Name: Danny Lanzat
+Specialization: General
+Doctor ID: DAL102
+
+Enter details for Doctor #3
+Name: Alex Pastoor
+Specialization: Lifer
+Doctor ID: APR103
+
+How many patients do you want to add? 2
+
+Enter details for Patient #1
+Name: Rizal Wahyu Pratama
+Age: 19
+Diagnosis (leave blank if none): COVID
+
+Enter details for Patient #2
+Name: Malkan Khulika
+Age: 35
+Diagnosis (leave blank if none): Flu
+
+How many appointments do you want to create? 2
+
+Creating Appointment #1
+
+List of Doctors:
+0 - Patrick Kluivert (COVID)
+1 - Danny Lanzat (General)
+2 - Alex Pastoor (Lifer)
+Select Doctor index: 0
+
+List of Patients:
+0 - Rizal Wahyu Pratama (Age: 19)
+1 - Malkan Khulika (Age: 35)
+Select Patient index: 1
+
+Enter appointment date and time (yyyy-MM-dd HH:mm) 
+Ex : 2025-04-18 10:30 
+Enter yout time:2025-04-30 15:30
+
+Creating Appointment #2
+
+List of Doctors:
+0 - Patrick Kluivert (COVID)
+1 - Danny Lanzat (General)
+2 - Alex Pastoor (Lifer)
+Select Doctor index: 1
+
+List of Patients:
+0 - Rizal Wahyu Pratama (Age: 19)
+1 - Malkan Khulika (Age: 35)
+Select Patient index: 0
+
+Enter appointment date and time (yyyy-MM-dd HH:mm) 
+Ex : 2025-04-18 10:30 
+Enter yout time:2025-05-01 20:30
+
+=== ALL DOCTORS ===
+Name: Patrick Kluivert, Specialization: COVID, ID: PKT101
+Name: Danny Lanzat, Specialization: General, ID: DAL102
+Name: Alex Pastoor, Specialization: Lifer, ID: APR103
+
+=== ALL PATIENTS ===
+Name: Rizal Wahyu Pratama, Age: 19
+Name: Malkan Khulika, Age: 35
+
+=== ALL APPOINTMENTS ===
+Appointment #1:
+  Doctor: Patrick Kluivert
+  Patient: Malkan Khulika
+  Date/Time: 2025-04-30T15:30
+Appointment #2:
+  Doctor: Danny Lanzat
+  Patient: Rizal Wahyu Pratama
+  Date/Time: 2025-05-01T20:30
+
+Do you want to see a patient's diagnosis? (yes/no): yes
+Enter the index of the patient you want to check: 0
+Enter access key: secret
+Diagnosis: COVID
+
+=== DIAGNOSIS USAGE COUNT ===
+Diagnosis Count:
+COVID: 1
+Flu: 1
+BUILD SUCCESSFUL (total time: 3 minutes 25 seconds)
+```
+
+**Penjelasan:**
+
+1. Pembuatan Data Dokter
+
+- Input:
+  Pengguna diminta memasukkan jumlah dokter yang ingin ditambahkan, yaitu 3 dokter.  
+  - Dokter #1: 
+    - Nama: Patrick Kluivert  
+    - Spesialisasi: COVID  
+    - Doctor ID: PKT101
+  - Dokter #2:
+    - Nama: Danny Lanzat  
+    - Spesialisasi: General  
+    - Doctor ID: DAL102
+  - Dokter #3:
+    - Nama: Alex Pastoor  
+    - Spesialisasi: Lifer  
+    - Doctor ID: APR103
+
+- Proses:
+  Setiap inputan tersebut dibuat menjadi objek Docto dan disimpan dalam list doctors.
+
+2. Pembuatan Data Pasien
+
+- Input:
+  Pengguna diminta memasukkan jumlah pasien yang ingin ditambahkan, yaitu 2 pasien.  
+  - Pasien #1: 
+    - Nama: Rizal Wahyu Pratama  
+    - Usia: 19  
+    - Diagnosis: COVID  
+  - Pasien #2:
+    - Nama: Malkan Khulika  
+    - Usia: 35  
+    - Diagnosis: Flu
+
+- Proses:
+  Data pasien diinput dan objek Patient dibuat.  
+  - Ketika diagnosis di-set, method setDiagnosis() melakukan validasi melalui kelas DataChecker dan juga mengupdate counter di DiagnosisCounter.
+
+3. Pembuatan Data Appointment
+
+- Input:
+  Pengguna diminta memasukkan jumlah appointment, yaitu 2 appointment.
+
+- Appointment #1:
+  - Pemilihan Dokter:
+    Ditampilkan daftar dokter dengan index. Pengguna memilih index 0, yang berarti dokter yang dipilih adalah Patrick Kluivert.
+  - Pemilihan Pasien:
+    Ditampilkan daftar pasien. Pengguna memilih index 1, yaitu pasien *Malkan Khulika*.
+  - Input Waktu:
+    Pengguna diminta memasukkan tanggal dan waktu dengan format yyyy-MM-dd HH:mm. Di sini dimasukkan: 2025-04-30 15:30.  
+    - Kode menggunakan LocalDateTime.parse() dengan DateTimeFormatter untuk memverifikasi format dan menyimpan waktu appointment.
+    
+- Appointment #2:
+  - Pemilihan Dokter: 
+    Pengguna memilih index 1 sehingga dokter yang dipilih adalah Danny Lanzat.
+  - Pemilihan Pasien: 
+    Pengguna memilih index 0, yang berarti pasien yang dipilih adalah Rizal Wahyu Pratama.
+  - Input Waktu: 
+    Dimasukkan tanggal dan waktu 2025-05-01 20:30.
+
+- Proses: 
+  Objek Appointment dibuat dengan menghubungkan objek Doctor dan Patient berdasarkan pilihan, serta waktu appointment yang sudah di-parse.
+
+
+4. Menampilkan Semua Data
+
+Setelah data dimasukkan, program mencetak:
+
+- Daftar Dokter:  
+  Menampilkan setiap dokter beserta nama, spesialisasi, dan ID sesuai input.
+  
+- Daftar Pasien:
+  Menampilkan nama dan usia dari masing-masing pasien.
+  
+- Daftar Appointment: 
+  Menampilkan rincian appointment:
+  - Appointment #1: 
+    - Dokter: Patrick Kluivert  
+    - Pasien: Malkan Khulika  
+    - Tanggal/Waktu: Ditampilkan sebagai 2025-04-30T15:30 (format ISO 8601, karena tipe LocalDateTime akan dicetak seperti itu)
+  - Appointment #2:
+    - Dokter: Danny Lanzat  
+    - Pasien: Rizal Wahyu Pratama  
+    - Tanggal/Waktu: Ditampilkan sebagai 2025-05-01T20:30
+
+5. Mengakses Diagnosis Pasien
+
+- Input:
+  Program menanyakan apakah pengguna ingin melihat diagnosis pasien.  
+  - Pengguna menjawab "yes".
+  - Program meminta index pasien yang ingin dicek, pengguna memasukkan index 0 (yang merupakan Rizal Wahyu Pratama).
+  - Program kemudian meminta access key.  
+    - Pengguna memasukkan **secret**
+
+- Proses:  
+  Method getDiagnosis(String key) di kelas Patient memeriksa apakah kunci yang dimasukkan sesuai dengan kunci rahasia di kelas DataChecker. Karena secret cocok, diagnosis pasien (yaitu "COVID") ditampilkan.
+
+6. Menampilkan Statistik Diagnosis
+
+- Output: 
+  Di bagian akhir, program mencetak jumlah penggunaan setiap diagnosis berdasarkan objek DiagnosisCounter.  
+  - "COVID: 1" karena hanya satu pasien (Rizal Wahyu Pratama) yang diinput dengan diagnosis "COVID".  
+  - "Flu: 1" karena pasien Malkan Khulika diinput dengan diagnosis "Flu".
+
+---
+
+7. Kesimpulan Output
+
+- **Input data** sesuai dengan perintah: 3 dokter, 2 pasien, dan 2 appointment.
+- **Pemilihan indeks** menentukan dokter dan pasien yang terhubung dalam appointment.
+- **Validasi tanggal/waktu** memastikan input sesuai format.
+- **Akses data sensitif diagnosis** hanya dapat dilakukan dengan memasukkan kunci yang benar (default: **secret**).
+- **Diagnosis Counter** mencatat setiap kali diagnosis di-set, sehingga menghasilkan statistik penggunaan diagnosis.
+
+## Kesimpulan
+
+Project ini merupakan implementasi OOP dalam bahasa Java yang berhasil mengelola data klinik secara terstruktur dan aman dengan menghubungkan objek Dokter, Pasien, dan Appointment, serta menerapkan encapsulation untuk mengamankan data sensitif seperti diagnosis melalui mekanisme kunci akses; selain itu, fitur validasi input dan penggunaan kelas utilitas seperti DiagnosisCounter memastikan integritas data dan memudahkan pengembangan serta pemeliharaan aplikasi di masa depan.
