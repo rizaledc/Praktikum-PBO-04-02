@@ -64,3 +64,6 @@ clinic-oop-Rizal/
 └── README.md  (Detailed Project Explanations)
 ```
 
+## Penjelasan Kode per Kelas
+
+### Doctor.java
