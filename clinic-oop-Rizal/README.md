@@ -119,11 +119,11 @@ public class Doctor {
 ```
 Penjelasan Berjalannya Kode:
 
-Fungsi: Menyimpan dan mengelola data dokter.
+- Fungsi: Menyimpan dan mengelola data dokter.
 
-Encapsulation: Atribut name, specialization, dan doctorId bersifat private.
+- Encapsulation: Atribut name, specialization, dan doctorId bersifat private.
 
-Penggunaan: Objek Doctor dibuat ketika pengguna memasukkan data dokter di program utama.
+- Penggunaan: Objek Doctor dibuat ketika pengguna memasukkan data dokter di program utama.
 
 ### 2. Patient.java
 
@@ -195,11 +195,11 @@ public class Patient {
 ```
 Penjelasan Berjalannya Kode:
 
-Fungsi: Menyimpan data pasien termasuk diagnosis yang sensitif.
+- Fungsi: Menyimpan data pasien termasuk diagnosis yang sensitif.
 
-Encapsulation: Data diagnosis tidak langsung dapat diakses; harus menggunakan kunci melalui method getDiagnosis.
+- Encapsulation: Data diagnosis tidak langsung dapat diakses; harus menggunakan kunci melalui method getDiagnosis.
 
-Interaksi: Saat diagnosis diset, method setDiagnosis() juga mengupdate jumlah penggunaan diagnosis melalui DiagnosisCounter.
+- Interaksi: Saat diagnosis diset, method setDiagnosis() juga mengupdate jumlah penggunaan diagnosis melalui DiagnosisCounter.
 
 ### 3. Appointment.java
 
@@ -248,11 +248,11 @@ public class Appointment {
 
 Penjelasan Berjalannya Kode:
 
-Fungsi: Menghubungkan dokter dan pasien pada suatu waktu tertentu.
+- Fungsi: Menghubungkan dokter dan pasien pada suatu waktu tertentu.
 
-Hubungan: Objek Appointment mengaitkan satu dokter dengan satu pasien.
+- Hubungan: Objek Appointment mengaitkan satu dokter dengan satu pasien.
 
-Penggunaan: Dibuat berdasarkan input pengguna, dimana dokter dan pasien dipilih dari daftar.
+- Penggunaan: Dibuat berdasarkan input pengguna, dimana dokter dan pasien dipilih dari daftar.
 
 ### 4. DataChecker.java
 
@@ -292,9 +292,9 @@ public class DataChecker {
 
 Penjelasan Berjalannya Kode:
 
-Fungsi: Mengamankan data sensitif dan memastikan input valid.
+- Fungsi: Mengamankan data sensitif dan memastikan input valid.
 
-Penggunaan: Dipanggil oleh Patient untuk memverifikasi diagnosis dan mengatur akses menggunakan kunci ("secret").
+- Penggunaan: Dipanggil oleh Patient untuk memverifikasi diagnosis dan mengatur akses menggunakan kunci ("secret").
 
 ### 5.DiagnosisCounter.java
 
@@ -342,11 +342,11 @@ public class DiagnosisCounter {
 
 Penjelasan Berjalannya Kode:
 
-Fungsi: Melacak berapa kali setiap diagnosis digunakan.
+- Fungsi: Melacak berapa kali setiap diagnosis digunakan.
 
-Interaksi: Dipanggil oleh Patient saat diagnosis di-set, sehingga data penggunaan diagnosis selalu ter-update.
+- Interaksi: Dipanggil oleh Patient saat diagnosis di-set, sehingga data penggunaan diagnosis selalu ter-update.
 
-Output: Menampilkan statistik diagnosis di akhir program.
+- Output: Menampilkan statistik diagnosis di akhir program.
 
 ### 6. Main.java
 
@@ -523,11 +523,11 @@ public class Main {
 
 Penjelasan Berjalannya Kode:
 
-Fungsi: Menjadi titik masuk program, mengatur alur interaksi dengan pengguna.
+- Fungsi: Menjadi titik masuk program, mengatur alur interaksi dengan pengguna.
 
-Input: Menerima input dari user untuk membuat data dokter, pasien, dan appointment.
+- Input: Menerima input dari user untuk membuat data dokter, pasien, dan appointment.
 
-Validasi: Melakukan validasi format tanggal dan waktu menggunakan loop while dan try-catch.
+- Validasi: Melakukan validasi format tanggal dan waktu menggunakan loop while dan try-catch.
 
 Output: Menampilkan data lengkap yang telah diinput dan menyediakan opsi untuk melihat diagnosis pasien jika kunci yang benar dimasukkan.
 
