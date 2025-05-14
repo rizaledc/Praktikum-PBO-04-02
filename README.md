@@ -9,10 +9,12 @@
 
   
 ## Latar Belakang
+Aplikasi penjualan rumah berbasis java dengan antarmuka grafis atau GUI yang intuitif dan user friendly akan memudahkan pengguna dalam melakukan proses transaksi jual beli rumah dengan customer. Aplikasi ini akan digunakan oleh penjual lahan untuk memudahkan berjalannya transaksi jual beli rumah. Aplikasi ini menggunakan sistem login dan logout yang bertujuan untuk membatasi akses hanya kepada pengguna yang sudah terdaftar. Tidak hanya login dan logout saja, terdapat menu exit untuk memudahkan user keluar dari aplikasi. Berikut alur aplikasi penjualan rumah
+
 ![image](https://github.com/user-attachments/assets/8c5daed7-797e-4f71-b7a7-f5f977912067)
 <p align="center">Gambar 1. Diagram Alur Aplikasi Penjualan Rumah</p>
-Aplikasi penjualan rumah berbasis java dengan antarmuka grafis atau GUI yang intuitif dan user friendly akan memudahkan pengguna dalam melakukan proses transaksi jual beli rumah dengan customer. Aplikasi ini akan digunakan oleh penjual lahan untuk memudahkan berjalannya transaksi jual beli rumah. Aplikasi ini menggunakan sistem login dan logout yang bertujuan untuk membatasi akses hanya kepada pengguna yang sudah terdaftar. Tidak hanya login dan logout saja, terdapat menu exit untuk memudahkan user keluar dari aplikasi.
 Menu Penjualan Rumah memungkinkan penjual untuk mengisi administrasi pembeli rumah, menu ini juga memungkinkan pembeli memilih area rumah mana yang ingin dibeli dimana setiap areanya memiliki harga tanah, dan harga bangunan yang berbeda beda. Setiap daerah memiliki tipe rumah 36, 45, dan 54 yang dimana akan memengaruhi dari segi luas tanah asli, dan luas tanah tersedia. Menu ini juga akan menampilkan harga total dari area dan tipe rumah yang dipilih user sehingga user dapat mempertimbangkan dari segi harga totalnya dalam membeli rumah. Aplikasi ini juga memudahkan pembeli dalam mengisi DP, lama cicilan, PPn, dan cicilan perbulannya dimana ini bertujuan untuk memudahkan pembeli dalam mempertimbangkan dari segi keuangan.
+
 Setelah transaksi terjadi, maka data penjualan rumah akan disimpan dalam menu tampilan data yang memudahkan pengguna dalam hal ini penjual lahan untuk memantau secara berkala hasil penjualan lahannya. Dengan adanya aplikasi ini, diharapkan dapat memudahkan transaksi jual beli rumah dan lahan.
 
 ## Class Diagram
